@@ -1,0 +1,18 @@
+.sign-up,.sign-in{
+    text-align: center;
+    margin: 0%;
+}
+
+#signin-form input{
+    width: 30%;
+    padding: 0 0.5%;
+}
+
+#signup-form input{
+    width: 30%;
+    padding: 0% 0.5%;
+}
+
+h1{
+    padding: 1%;
+}
