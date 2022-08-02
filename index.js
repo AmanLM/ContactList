@@ -1,7 +1,11 @@
+require("dotenv").config();
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 8000;
 const expressLayouts = require('express-ejs-layouts');
+
+// Database
+require('./config/mongoose');
 
 //Ejs-setup
 app.set('view engine', 'ejs');
