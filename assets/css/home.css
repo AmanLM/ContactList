@@ -30,7 +30,7 @@ form input {
     display: flex;
     margin: auto;
     width: 30%;
-    padding: 1vh;
+    padding: 5px;
     flex-direction: row;
     border: 2px solid black;
 }
@@ -51,4 +51,21 @@ button {
     margin: 2px 1px;
     cursor: pointer;
     border-radius: 5px;
+}
+.contacts-list{
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+
+}
+li p {
+    padding: 1.5vw;
 }

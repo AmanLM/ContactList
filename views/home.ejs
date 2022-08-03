@@ -1,8 +1,35 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="./css/home.css">
+<%if(locals.user){%>
 <div class="container">
-    <form action="/contact/create-contact" method="POST">
+    <form action="/contacts/create-contact" method="POST">
         <input type="text" name="name" placeholder="Enter Name" required><br>
         <input type="text" name="phone" placeholder="Enter Number" required><br>
         <button type="submit">Submit</button>
     </form>
 </div>
+<div class="contacts-list">
+    <h1>My Contacts</h1>
+    <ul id="list-of-contacts">
+        <% for(let i of contact_list){%>
+        <%if (locals.user && locals.user.id == i.user.id){%>
+        <li> 
+            <p>
+                <%= i.name %>
+            </p>
+            <p>
+                <%= i.number %>
+            </p>
+            <p>
+                <a href="/contacts/delete-contact/?id=<%= i._id %>" id="bucket">
+                    <i class="material-icons">delete</i>
+                </a>
+            </p>
+        </li>
+        <%}%>
+        <%}%>
+    </ul>
+</div>
+<%}else{%>
+<h1>Will be Showing...</h1>
+<%}%>

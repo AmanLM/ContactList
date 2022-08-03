@@ -1,5 +1,15 @@
+const Contact = require('../models/contacts');
+
 module.exports.home = function(req,res){
-    return res.render('home',{
-        title: "HomePage"
-    });
+    Contact.find({})
+    .populate('user')
+    .exec(function(err,contacts){
+        if(err){
+            console.log(err);
+        }
+        return res.render('home',{
+            title:"HomePage",
+            contact_list : contacts
+        });
+    })
 }
