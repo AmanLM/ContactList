@@ -7,6 +7,8 @@ const expressLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
+
 //Mongo-store
 const MongoStore = require('connect-mongo')
 //cookie-parser
@@ -44,7 +46,7 @@ app.use(session({
     },
     store : MongoStore.create(
         {
-            mongoUrl : 'mongodb+srv://contactlistwebapp:DJyWi6rMTqh6YssW@cluster0.vuhjuee.mongodb.net/?retryWrites=true&w=majority',
+            mongoUrl : 'mongodb+srv://sampark:bl7zPZNd2kyn0oD7@samparkproject.2c72sm8.mongodb.net/?retryWrites=true&w=majority',
             autoRemove : 'disabled'
         },function(err){
             console.log(err || "Connection is fine");
